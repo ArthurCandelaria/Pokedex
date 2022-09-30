@@ -1,6 +1,7 @@
 @import '../../../config-scss/rem-calc.scss';
 
 :host {
+
   form {
     display: flex;
     justify-content: space-between;
@@ -8,6 +9,7 @@
     background: rgba(255, 255, 255, 0.2);
     padding: rem-calc(15) rem-calc(20);
     border-radius: rem-calc(10);
+    margin-bottom: rem-calc(20);
 
     input {
       width: 95%;
