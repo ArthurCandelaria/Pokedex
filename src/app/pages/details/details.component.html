@@ -1,1 +1,32 @@
-<p>details works!</p>
+<app-header></app-header>
+
+<main>
+    <ng-container *ngIf="isLoading">
+        <section class="pokemon__names">
+            <h1 class="slideInLeft">{{pokemon[0].name}}</h1>
+            <h2 class="slideInRight">{{pokemon[1].names[0]?.name}}</h2>
+        </section>
+
+        <section class="pokemon__status">
+            <img class="slideInDown" [src]="pokemon[0].sprites.other.dream_world.front_default" [alt]="pokemon[0].name">
+        </section>
+
+        <article class="pokemon__status__statistics fadeIn">
+            <h3>Estatísticas</h3>
+
+            <ol>
+                <li *ngFor="let status of pokemon[0].stats">
+                    {{status.stat.name}}
+                    <strong>teste
+                        {{status.base_stat}}
+                    </strong>
+                </li>
+            </ol>
+
+            <a [routerLink]="['']" class="btn btn__secondary">Voltar</a>
+        </article>
+    </ng-container>
+
+    <img *ngIf="error" src="../../../assets/error.png" alt="Erro ao encontrar o Pokémon">
+
+</main>

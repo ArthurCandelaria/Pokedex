@@ -1,7 +1,7 @@
-<app-search></app-search>
+<app-search (emmitSearch)="getSearch($event)"></app-search>
 
 <section class="list">
-    <div *ngFor="let pokemon of pokemons">
+    <div *ngFor="let pokemon of setPokemons">
         <a [routerLink]="['/details', pokemon?.status?.id]" routerLinkActive="router-link-active"
             routerLinkActive="router-link-active" routerLinkActive="router-link-active" class="pokemon">
             <section class="pokemon__status">
